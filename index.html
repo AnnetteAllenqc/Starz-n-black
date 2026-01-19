@@ -2,99 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Starz-N-Black | Quad Cities Community Outreach</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starz-N-Black | Nonprofit Organization</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== STAR BACKGROUND ===== */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, gold 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.15;
+      z-index: -1;
+      animation: moveStars 60s linear infinite;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, #000, #111);
+    }
+
+    .hero img {
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 40px gold;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-top: 30px;
+      color: gold;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      background: gold;
+      color: black;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px gold;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    section img {
+      max-width: 80%;
+      margin-top: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255,215,0,0.5);
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 50px auto 0;
+    }
+
+    .card {
+      background: #111;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #000;
+      padding: 50px 20px;
+      text-align: center;
+      border-top: 1px solid gold;
+    }
+
+    footer p {
+      margin: 10px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="stars"></div>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <img src="images/starz-n-black-logo.png" alt="Starz-N-Black Logo" class="logo">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#programs">Programs</a></li>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- HERO -->
+  <div class="hero">
+    <img src="assets/starz-n-black-hero.png" alt="Starz-N-Black Hero Image" />
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <img src="images/starz-n-black-hero.png" alt="Starz-N-Black Hero Image" class="hero-img">
-
-    <div class="hero-content">
-      <h1>Starz-N-Black</h1>
-      <p>Giving back with food, support, and hope to the Quad Cities and surrounding areas.</p>
-
-      <div class="hero-buttons">
-        <a href="#contact" class="btn gold">Support the Mission</a>
-        <a href="#contact" class="btn outline">Join the Team</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section fade-in">
-    <h2>About Starz-N-Black</h2>
+    <h1>Starz-N-Black</h1>
     <p>
-      Starz-N-Black is a nonprofit organization based in Davenport, Iowa, proudly serving the Quad Cities and surrounding communities.
-      We are committed to uplifting individuals and families through compassion, action, and community outreach.
+      A nonprofit organization based in Davenport, Iowa, serving the Quad Cities
+      and surrounding areas through community outreach, compassion, and action.
     </p>
+
+    <div class="buttons">
+      <a href="#donate" class="btn">Support the Mission</a>
+      <a href="#join" class="btn">Join the Team</a>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section>
+    <h2>Our Mission</h2>
+    <p>
+      Starz-N-Black is dedicated to giving back to our community by providing hot
+      meals for the homeless, food pantry support, and resources for families in need.
+      We believe in unity, dignity, and making a lasting impact.
+    </p>
+    <img src="assets/starz-n-black-mission.png" alt="Our Mission" />
   </section>
 
-  <!-- PROGRAMS -->
-  <section id="programs" class="section dark fade-in">
+  <!-- SERVICES -->
+  <section>
     <h2>What We Do</h2>
 
-    <div class="cards">
+    <div class="services">
       <div class="card">
-        <h3>🍽 Hot Meals for the Homeless</h3>
-        <p>Providing warm, nutritious meals to those in need with dignity and care.</p>
+        <h3>Hot Meals</h3>
+        <p>Providing warm, nourishing meals to individuals experiencing homelessness.</p>
       </div>
 
       <div class="card">
-        <h3>🥫 Food Pantry Support</h3>
-        <p>Helping families access groceries and essential food resources.</p>
+        <h3>Food Pantry</h3>
+        <p>Distributing food and essentials to families in the Quad Cities area.</p>
       </div>
 
       <div class="card">
-        <h3>🤝 Community Outreach</h3>
-        <p>Partnering with local organizations to strengthen and uplift our community.</p>
+        <h3>Community Outreach</h3>
+        <p>Supporting local events, families, and individuals in need.</p>
       </div>
     </div>
+
+    <img src="assets/starz-n-black-community.png" alt="Community Support" />
   </section>
 
-  <!-- COMMUNITY IMAGE -->
-  <section class="image-section fade-in">
-    <img src="images/starz-n-black-community.png" alt="Starz-N-Black Community Outreach">
-  </section>
-
-  <!-- IMPACT -->
-  <section id="impact" class="section fade-in">
-    <h2>Our Impact</h2>
-    <img src="images/starz-n-black-impact.png" alt="Starz-N-Black Impact Image" class="impact-img">
+  <!-- FEATURE IMAGE -->
+  <section>
+    <h2>Making a Difference Together</h2>
     <p>
-      Every meal served and every hand extended represents hope. Starz-N-Black continues to make a real difference
-      by meeting people where they are and supporting them during hard times.
+      With the help of volunteers, donors, and community partners, Starz-N-Black
+      continues to shine light where it’s needed most.
     </p>
+    <img src="assets/starz-n-black-feature.png" alt="Giving Back" />
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section dark fade-in">
+  <section id="join">
     <h2>Get Involved</h2>
-    <p><strong>Founder:</strong> Annette Allen</p>
-    <p><strong>Phone:</strong> <a href="tel:15639493877">563-949-3877</a></p>
-    <p><strong>Email:</strong> <a href="mailto:Coco.24aa13@gmail.com">Coco.24aa13@gmail.com</a></p>
-
-    <p class="cta">
-      Interested in donating, volunteering, or joining the team? Reach out — we’d love to hear from you.
+    <p>
+      Want to donate, volunteer, or join the Starz-N-Black team?
+      We’d love to hear from you.
     </p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Starz-N-Black | Quad Cities Community Outreach</p>
+  <footer id="donate">
+    <p><strong>Founder:</strong> Annette Allen</p>
+    <p><strong>Phone:</strong> 563-949-3877</p>
+    <p><strong>Email:</strong> Coco.24aa13@gmail.com</p>
+    <p>© Starz-N-Black | Davenport, Iowa</p>
   </footer>
 
 </body>
